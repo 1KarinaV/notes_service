@@ -4,8 +4,6 @@ services:
   psql:
     image: postgres:15
     container_name: 'psql'
-    ports:
-      - '5432:5432' # For debug, drop in prod
     volumes:
       - ../migrations/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     environment:
